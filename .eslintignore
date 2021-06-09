@@ -1,0 +1,31 @@
+#npm
+node_modules
+
+#umi
+.umi
+.umi-production
+dist
+logs
+/run
+*zip-dist*
+
+#misc
+.DS_Store
+.eslintrc.js
+package-lock.json
+
+
+# pro5
+/lambda/
+/scripts
+/config
+.history
+
+# amg
+.idea/
+.temp_code/
+bin/
+docs/
+public/
+src/**/*-test.js
+app/public/*

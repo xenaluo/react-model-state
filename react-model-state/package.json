@@ -1,0 +1,32 @@
+{
+  "name": "react-model-state",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "rimraf dist && rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
+  "author": "xenaluo",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^4.3.2"
+  },
+  "devDependencies": {
+    "react": "^17.0.2",
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "@babel/preset-react": "^7.13.13",
+    "rimraf": "^3.0.2",
+    "rollup": "^1.20.3",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-terser": "^5.1.1",
+    "rollup-plugin-typescript2": "^0.24.0",
+    "rollup-plugin-uglify": "^6.0.4",
+    "rollup-plugin-visualizer": "^2.5.4"
+  }
+}
