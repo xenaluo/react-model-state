@@ -90,7 +90,7 @@ export default createModels
 
 ```jsx
 // 入口文件 
-// eg: taro - app.tsx
+// eg: taro - app.jsx
 import { Provider } from 'react-model-state'
 import createModels from './models'
 
@@ -119,7 +119,35 @@ const { count, increment, decrement } = useModel('counter', (model) => {
 });
 
 // ...
+```
 
+## 注意事项
+### 在 model 中引用其他 model 时，需注意注册 model 的顺序，确保被引用的 model 优先注册
+
+```js
+// models/counter.js
+function useCounter() {
+  const { count1 } = useModel('counter1', (model) => {
+    return {
+      count1: model.count,
+    }
+  });
+
+  // ...
+}
+
+// models/index.js
+import counter from './counter'
+import counter1 from './counter1'
+// ...
+
+const createModels = () => {
+  return {
+    counter1,  // 注意：counter1 需要在 counter 前面
+    counter,
+    // ...
+  }
+}
 
 ```
 
