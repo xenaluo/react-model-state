@@ -1,5 +1,5 @@
 import { View, Text, Button, Navigator } from '@tarojs/components'
-import { useModel } from 'react-model-state'
+// import { useModel } from '../../react-model-state/dist'
 import './index.less'
 
 const Index = () => {

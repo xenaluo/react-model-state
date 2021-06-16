@@ -1,20 +1,20 @@
-import React, { useRef, useEffect } from 'react'
-
+import React, { useRef, useEffect, useMemo } from 'react'
 
 interface EnclosureProps {
-  hook: () => any;
+  hook: (datas: any) => any;
   updater: (val: any) => void;
   namespace: string;
+  datas: { [key: string]: any }
 }
 
-
 export default (props: EnclosureProps) => {
-  const { updater, hook } = props;
-  const data = hook();
+  const { updater, hook, datas } = props;
+
+  const data = hook(datas);
 
   const init = useRef(false)
 
-  useEffect(() => {
+  useMemo(() => {
     updater(data)
     init.current = false;
   }, [])

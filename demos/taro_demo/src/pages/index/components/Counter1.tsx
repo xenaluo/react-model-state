@@ -8,10 +8,14 @@ const Counter1 = () => {
     decrement1: model.decrement1,
     increment1: model.increment1,
   }));
+  const { count111 } = useModel('counter1', (model) => ({
+    count111: model.count,
+  }));
 
   return (
     <View className='index'>
-      <Text>count: {count1}</Text>
+      <View>count11: {count111}</View>
+      <View>count: {count1}</View>
       <Button onClick={increment1}>test +</Button>
       <Button onClick={decrement1}>test -</Button>
     </View>

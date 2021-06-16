@@ -19,6 +19,7 @@ export default (props: ProviderProps) => {
     {Object.keys(models).map(namespace => {
       return (
         <Enclosure
+          datas={dispatcher.datas}
           key={namespace} namespace={namespace}
           hook={models[namespace]}
           updater={(val) => {
