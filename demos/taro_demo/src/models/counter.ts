@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import { useModel } from 'react-model-state'
 
-function useCounter(state) {
+function useCounter() {
   const { count111, decrement111 } = useModel('counter1', (model) => {
     return {
       count111: model.count,
@@ -33,3 +33,6 @@ function useCounter(state) {
 }
 
 export default useCounter;
+
+const deps = ['counter1']
+export { deps }

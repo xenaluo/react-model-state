@@ -1,7 +1,8 @@
 import useModel from './useModel';
-import Provider from './Provider'
+import Provider from './Provider';
+import { createModels } from './assist/helper';
 
 
 export {
-  useModel, Provider
+  useModel, Provider, createModels
 }

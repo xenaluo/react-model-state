@@ -122,11 +122,11 @@ const { count, increment, decrement } = useModel('counter', (model) => {
 ```
 
 ## 注意事项
-### 在 model 中引用其他 model 时，需注意注册 model 的顺序，确保被引用的 model 优先注册
+### 在 model 中引用其他 model 时，需要导出依赖数组
 
 ```js
 // models/counter.js
-function useCounter() {
+export default function useCounter() {
   const { count1 } = useModel('counter1', (model) => {
     return {
       count1: model.count,
@@ -135,19 +135,23 @@ function useCounter() {
 
   // ...
 }
+export { deps: ['counter1'] }
 
 // models/index.js
 import counter from './counter'
 import counter1 from './counter1'
+
+import { createModels } from 'react-model-state'
 // ...
 
-const createModels = () => {
-  return {
-    counter1,  // 注意：counter1 需要在 counter 前面
-    counter,
-    // ...
-  }
-}
+export default createModels([
+  {
+    namespace: 'counter', hook: counter, deps: counter_deps
+  },
+  {
+    namespace: 'counter1', hook: counter1
+  },
+])
 
 ```
 

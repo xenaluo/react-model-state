@@ -1,9 +1,10 @@
 {
   "name": "react-model-state",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "scripts": {
     "build": "rimraf dist && rollup -c",
+    "build:watch": "rimraf dist && rollup -c --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "main": "./dist/index.js",
